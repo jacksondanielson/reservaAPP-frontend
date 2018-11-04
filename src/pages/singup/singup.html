@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>isertUser</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+  <form [formGroup]="formGroup" (ngSubmit)="insertUser(); $event.preventDefault()">
+
+    <ion-item>
+      <ion-label fixed>Nome</ion-label>
+      <ion-input formControlName="nome" type="text" ></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Telefone</ion-label>
+      <ion-input formControlName="telefone" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Email</ion-label>
+      <ion-input formControlName="email" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>senha</ion-label>
+      <ion-input formControlName="senha" type="text"></ion-input>
+    </ion-item>
+
+    <button ion-button block type="submit" [disabled]="formGroup.invalid">Adicionar Usuario</button>
+  </form>
+</ion-content>

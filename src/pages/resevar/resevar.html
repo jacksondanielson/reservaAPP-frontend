@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>resevas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+    <ion-list>
+      <button ion-item *ngFor="let item of items">
+        <h2>Descrição da reserva:</h2>
+        <p>{{item.descricao}}</p>
+        <h2>Solicitante:</h2>
+        <p>{{item.nomeDoSolicitante}}</p>
+        <h2>Data da reserva</h2>
+        <p>{{item.dataDaReserva}}</p>
+        <h2>Data final da reserva:</h2>
+        <p>{{item.dataFinalDaReserva}}</p>
+      </button>
+      
+    </ion-list>
+    
+  
+</ion-content>

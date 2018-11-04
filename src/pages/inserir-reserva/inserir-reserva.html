@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Inserir resevas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="formGroup" (ngSubmit)="insertReserva(); $event.preventDefault()">
+
+    <ion-item>
+      <ion-label fixed>Descrição da Reserva</ion-label>
+      <ion-input formControlName="descricao" type="text" ></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Data da Reserva</ion-label>
+      <ion-input formControlName="dataDaReserva" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Data final da Reserva</ion-label>
+      <ion-input formControlName="dataFinalDaReserva" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Solicitante da Reserva</ion-label>
+      <ion-input formControlName="nomeDoSolicitante" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Contato do solicitente</ion-label>
+      <ion-input formControlName="contatoSolicitante" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Email do solicitente</ion-label>
+      <ion-input formControlName="emailSolicitante" type="text"></ion-input>
+    </ion-item>
+
+    <button ion-button block type="submit" [disabled]="formGroup.invalid">Adicionar Reserva</button>
+  </form>
+</ion-content>
