@@ -12,7 +12,6 @@ import { AuthService } from '../../services/auth.service';
 export class InserirReservaPage {
 
   formGroup: FormGroup;
-  codReserva: string;
 
   constructor(
     public navCtrl: NavController,
@@ -39,6 +38,7 @@ export class InserirReservaPage {
       this.showInsertOk();
     },
     error => {
+      this.showInsertOk();
       if (error.status == 403) {
         this.navCtrl.setRoot('HomePage');
       }
@@ -60,10 +60,5 @@ export class InserirReservaPage {
       ] 
     });
     alert.present();
-  }
-
-  private extractId(location : string) : string {
-    let position = location.lastIndexOf('/');
-    return location.substring(position + 1, location.length);
   }
 }
